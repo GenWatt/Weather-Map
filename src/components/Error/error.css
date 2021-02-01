@@ -1,0 +1,36 @@
+.error-box {
+    width: 300px;
+    position: fixed!important;
+    top: 60px;
+    left: 0;
+    padding: 10px;
+    border-radius: var(--radius);
+    z-index: 4000000;
+    background-color: var(--error-box-color);
+    text-align: left;
+    position: relative;
+    word-wrap: break-word;
+}
+
+.message {
+    margin-top: 20px;
+    background-color: var(--message-color);
+    padding: 3px;
+    border-radius: var(--radius);
+}
+
+.del {
+    background-color: var(--danger-color);
+    border-radius: var(--radius);
+    padding: 3px;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    color: var(--font-color);
+    transition: transform .4s ease-in-out;
+}
+
+.del:hover,
+.del:focus {
+    transform: scale(1.1)
+}

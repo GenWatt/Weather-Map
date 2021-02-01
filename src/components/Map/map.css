@@ -1,0 +1,29 @@
+.map {
+    text-align: center;
+    height: 100vh;
+    width: 100%;
+    color: var(--font-color);
+}
+
+.weather-info {
+    font-size: var(--font-small);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+}
+
+.very-cold-gradient {
+    background-image: var(--vary-cold-gradient);
+    color: var(--font-color);
+}
+
+.hot-gradient {
+    background-image: var(--hot-gradient);
+}
+
+.cold-gradient {
+    background-image: var(--cold-gradient);
+}

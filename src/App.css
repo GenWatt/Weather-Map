@@ -1,0 +1,14 @@
+.show-search-btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 500000000;
+    padding: 3px;
+    border-radius: var(--radius);
+    transition: background-color .5s ease-in-out;
+}
+
+.show-search-btn:hover,
+.show-search-btn:focus {
+    background-color: rgb(202, 202, 202);
+}
