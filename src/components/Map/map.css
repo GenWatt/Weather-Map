@@ -8,11 +8,12 @@
 .weather-info {
     font-size: var(--font-small);
     border-radius: 50%;
-    width: 38px;
-    height: 38px;
-    font-weight: 900;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-weight: bold;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .very-cold-gradient {

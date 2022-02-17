@@ -1,5 +1,6 @@
 .nav-container {
-    width: 300px;
+    width: 30vw;
+    min-width: 280px;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -9,6 +10,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    cursor: auto;
 }
 
 .search-form {
@@ -16,8 +18,8 @@
 }
 
 .box {
-    margin: 5px;
-    padding: 5px;
+    margin: .6rem;
+    padding: .5rem;
     display: flex;
     flex-direction: column;
     background-color: var(--black-transparent);
@@ -27,13 +29,13 @@
 .search-label {
     text-align: left;
     font-size: var(--font-large);
-    margin-bottom: 5px;
+    margin-bottom: .6rem;
 }
 
 .input {
     outline: none;
     border: 2px solid var(--primary-input-color);
-    padding: 5px;
+    padding: .6rem;
     border-radius: var(--radius);
     background-color: var(--black-less-transparent);
 }
@@ -57,8 +59,8 @@
 .btn-submit {
     background-color: var(--primary-input-color);
     color: var(--font-color);
-    margin-top: 5px;
-    padding: 3px;
+    margin-top: .6rem;
+    padding: .3rem;
     border-radius: var(--radius);
     text-transform: uppercase;
     font-size: var(--font-medium);

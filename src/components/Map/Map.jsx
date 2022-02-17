@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import Nav from "./Nav/Nav";
-import "./map.css";
+import React, { useState } from 'react'
+import Nav from './Nav/Nav'
+import './map.css'
 
-import { addGradient } from "../../utilities/gradients";
-import { MOBILE_VIEW, POLAND_CORDS, ZOOM, ZOOM_MOBILE } from "../../constants";
-import { useSelector } from "react-redux";
-import { Tooltip, GeoJSON, MapContainer, TileLayer, Marker } from "react-leaflet";
-import poland from "../../poland.json";
-import { AnimatePresence } from "framer-motion";
+import { addGradient } from '../../utilities/gradients'
+import { MOBILE_VIEW, POLAND_CORDS, ZOOM, ZOOM_MOBILE } from '../../constants'
+import { useSelector } from 'react-redux'
+import { Tooltip, GeoJSON, MapContainer, TileLayer, Marker } from 'react-leaflet'
+import poland from '../../poland.json'
+import { AnimatePresence } from 'framer-motion'
 
 export default function Map({ isNavShow, setNav }) {
   //Get weather info
-  const weather = useSelector((state) => state.weather);
-  const [value, setValue] = useState("Bielsko Biała");
+  const weather = useSelector((state) => state.weather)
+  const [value, setValue] = useState('')
   //Take data when user clicked on marker and open nav
   const handleMarkerClick = (e) => {
-    setNav(true);
-    setValue(e.target.options.name);
-  };
+    setNav(true)
+    setValue(e.target.options.name)
+  }
 
   return (
     <MapContainer
@@ -43,7 +43,7 @@ export default function Map({ isNavShow, setNav }) {
             key={data.id_stacji}
             eventHandlers={{
               click: (e) => {
-                handleMarkerClick(e);
+                handleMarkerClick(e)
               },
             }}
           >
@@ -51,7 +51,7 @@ export default function Map({ isNavShow, setNav }) {
               direction="top"
               offset={[-10, 20]}
               permanent
-              className={"weather-info " + addGradient(data.temperatura)}
+              className={'weather-info ' + addGradient(data.temperatura)}
             >
               <p>{data.temperatura}&deg;</p>
             </Tooltip>
@@ -59,5 +59,5 @@ export default function Map({ isNavShow, setNav }) {
         ) : null
       )}
     </MapContainer>
-  );
+  )
 }

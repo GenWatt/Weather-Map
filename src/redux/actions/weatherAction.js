@@ -1,4 +1,5 @@
 import { FETCH_ERROR, FETCH_LAT_LNG_SUCCESS, FETCH_WEATHER } from "./types";
+import axios from 'axios';
 
 export const fetchWeather = () => async(dispatch) => {
     try {
@@ -12,18 +13,19 @@ export const fetchWeather = () => async(dispatch) => {
     }
 }
 
-export const fetchLatLng = (data) => async(dispatch) => {
+export const fetchLatLng = (items) => async(dispatch) => {
 
-    const fullData = data.map(async(data, i) => {
+    const fullData = items.map(async(rest, index) => {
+        if (index > 1) return
         try {
+            const res = await axios.get(`http://open.mapquestapi.com/geocoding/v1/address?key=${process.env.REACT_APP_GEOLOCATION_API_KEY}&city=${rest.stacja}`);
+            const { data } = res
+            let output = {}
 
-            const res = await fetch(`http://api.positionstack.com/v1/forward?access_key=${process.env.REACT_APP_GEOLOCATION_API_KEY}&query=${data.stacja}`);
-            const latlng = await res.json();
-
-            if (latlng.data[0].latitude)
-                return {...data, location: { lat: latlng.data[0].latitude, lng: latlng.data[0].longitude } }
-
-
+            if (data.results) {
+                output = {...rest, location: {...data.results[0].locations[0].latLng } }
+            }
+            return output
         } catch (error) {
             dispatch({ type: FETCH_ERROR, payload: error })
         }
