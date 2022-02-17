@@ -21,3 +21,5 @@
 #Description:
 
 App fetch weather data then put it on map. You can check weather details by clicking on marker, selecting from list or typing station name.
+
+API KEY to geolocate : https://positionstack.com/quickstart.
